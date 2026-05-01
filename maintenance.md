@@ -16,6 +16,39 @@ Cold. Methodical. Repeatable. Permanent.
 
 ---
 
+## 2. GITHUB ACTIONS TRACKER
+A central log of all automated workflows across the empire.  
+Tracks purpose, triggers, dependencies, and current operational status.
+
+| Workflow Name | Repo | File Path | Trigger | Purpose | Tokens Required | Last Run | Status |
+|---------------|------|-----------|---------|---------|----------------|----------|--------|
+| **Threads Poster** | threads-poster | `.github/workflows/post.yml` | Schedule / Manual | Posts content from Sheets to Threads | Threads Token | YYYY‑MM‑DD | Passing / Failing |
+| **Reels Engine** | reels-pipeline | `.github/workflows/reels.yml` | Manual | Generates IG/YouTube reels | PAT, SA Key | YYYY‑MM‑DD | Passing / Failing |
+| **Sheets Sync** | reels-pipeline | `.github/workflows/sync.yml` | Schedule | Pulls content from Sheets | SA Key | YYYY‑MM‑DD | Passing / Failing |
+| **FM Media Distributor** | fm-media-engine | `.github/workflows/distribute.yml` | Manual | Multi‑platform distribution | PAT | YYYY‑MM‑DD | Passing / Failing |
+| **Identity Gradient Generator** | identity-engine | `.github/workflows/gradient.yml` | Manual | Generates identity gradients | None | YYYY‑MM‑DD | Passing / Failing |
+| **Harvest Scanner** | aei_empire_backend | `.github/workflows/harvest.yml` | Manual | Scans repos + forks targets | PAT | YYYY‑MM‑DD | Passing / Failing |
+
+---
+
+### ACTIONS HEALTH NOTES
+- Any workflow marked **Failing** must be reviewed within 48 hours.  
+- Any workflow requiring a token must be re‑tested after token refresh.  
+- All workflows should have a **manual trigger** for dry‑run testing.  
+- If a workflow is unused for > 60 days, evaluate for decommissioning.
+
+---
+
+### ACTIONS AUDIT CHECKLIST
+- [ ] All workflows have clear triggers  
+- [ ] All workflows have documented token dependencies  
+- [ ] All workflows have manual dispatch enabled  
+- [ ] All workflows have a passing dry‑run in the last 30 days  
+- [ ] All workflows are still relevant to current architecture  
+
+---
+
+
 ## 2. MONTHLY MAINTENANCE CHECKLIST
 | Task | Description | Location | Frequency | Status |
 |------|-------------|----------|-----------|--------|
