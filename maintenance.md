@@ -5,13 +5,14 @@ Cold. Methodical. Repeatable. Permanent.
 ---
 
 ## 1. TOKEN DIRECTORY
-| Token Name | Storage Location | Expiry Cycle | Systems Using It | Refresh Protocol | Last Updated |
-|-----------|------------------|--------------|------------------|------------------|--------------|
-| **Threads Long‑Lived Token** | Google Sheets → `Config!B9` + GitHub Secret `THREADS_TOKEN` | Monthly | Apps Script Threads Poster | Protocol 1 | YYYY‑MM‑DD |
-| **GitHub PAT** | GitHub → Repo Secrets | ~90 days | GitHub Actions (content pipelines) | Protocol 2 | YYYY‑MM‑DD |
-| **Google Service Account Key** | GitHub Secret `GSHEETS_KEY` | Rare | Sheets → GitHub pipelines | Protocol 3 | YYYY‑MM‑DD |
-| **YouTube OAuth Token** | GitHub Secret | Variable | YouTube Shorts pipeline | Protocol 4 | YYYY‑MM‑DD |
-| **Instagram Publishing Token** (if used) | GitHub Secret | 60 days | IG Reels pipeline | Protocol 5 | YYYY‑MM‑DD |
+| Token Name | Storage Location | Expiry Cycle | Systems Using It | Refresh Protocol | Last Updated | Notes |
+|-----------|------------------|--------------|------------------|------------------|---------------|-------|
+| **Threads Long‑Lived Token** | Google Sheets → `Config!B9` | 30 Days | Google Apps Script Threads Poster | Protocol 1 | 01/05/2026 |
+| **Threads Long‑Lived Token** | GitHub Repo → `FMMedia-TextOutput_Engine` | 30 Days | GitHub Actions Threads Poster | Protocol 1 | 01/05/2026 |
+| **GitHub PAT** | GitHub → Repo Secrets | ~90 days | GitHub Actions (content pipelines) | Protocol 2 | YYYY‑MM‑DD | Need to figure out what is being done here |
+| **Google Service Account Key** | GitHub Secret `GSHEETS_KEY` | Rare | Sheets → GitHub pipelines | Protocol 3 | YYYY‑MM‑DD | Need to figure out what is being done here |
+| **YouTube OAuth Token** | GitHub Secret | Variable | YouTube Shorts pipeline | Protocol 4 | YYYY‑MM‑DD | Non-existent |
+| **Instagram Publishing Token** (if used) | GitHub Secret | 60 days | IG Reels pipeline | Protocol 5 | YYYY‑MM‑DD | Non-existent |
 
 ---
 
