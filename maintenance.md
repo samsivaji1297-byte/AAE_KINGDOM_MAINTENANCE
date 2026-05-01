@@ -9,8 +9,8 @@ Cold. Methodical. Repeatable. Permanent.
 |-----------|------------------|--------------|------------------|------------------|---------------|-------|
 | **Threads Long‑Lived Token** | Google Sheets → `Config!B9` | 30 Days | Google Apps Script Threads Poster | Protocol 1 | 01/05/2026 |
 | **Threads Long‑Lived Token - THREADS_ACCESS_TOKEN** | GitHub Repo → `FMMedia-TextOutput_Engine` | 30 Days | GitHub Actions Threads Poster | Protocol 1 | 01/05/2026 |
+| **Google Service Account Key - GitHub Secret `CONTENT_REPO_PAT** | `GitHub Repo → `FMMedia-VisualOutput_Engine` | Rare | Sheets → GitHub pipelines | Protocol 2 | 12/02/2026 | Used to pull GSheets Content into Video Reel Format (basic design), just to have something go out |
 | **GHHarvestScanner-PAT** | Main GitHub A/C → Repo PAT | ~No Expiry Date | GitHub Public Repo Harvest | Protocol Unknown | 14/04/2026 | This was done to see if I could harvest public GH Repos |
-| **Google Service Account Key** | GitHub Secret `GSHEETS_KEY` | Rare | Sheets → GitHub pipelines | Protocol Unknown | YYYY‑MM‑DD | Need to figure out what is being done here |
 | **YouTube OAuth Token** | GitHub Secret | Variable | YouTube Shorts pipeline | Protocol Unknown | YYYY‑MM‑DD | Non-existent |
 | **Instagram Publishing Token** (if used) | GitHub Secret | 60 days | IG Reels pipeline | Protocol Unknown | YYYY‑MM‑DD | Non-existent |
 
