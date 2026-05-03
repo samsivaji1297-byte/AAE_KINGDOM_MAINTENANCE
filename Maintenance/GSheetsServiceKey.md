@@ -35,11 +35,8 @@ Below is the exact workflow you want in your maintenance MD.
 It looks like:
 
 ```
-github-automation@<project-id>.iam.gserviceaccount.com
+github-automation@<project-id>.iam.gserviceaccount.com [github-automation@video-reels-pipelinenode.iam.gserviceaccount.com]
 ```
-github-automation@video-reels-pipelinenode.iam.gserviceaccount.com
-```
-
 
 ## **6. Share the Google Sheet With That Email**
 - Open your Google Sheet (e.g., **FM Media Enterprises Vault**)  
@@ -73,5 +70,3 @@ os.environ["GOOGLE_CREDENTIALS"]
 This is the authentication payload used by the Sheets API client.
 
 ---
-
-
