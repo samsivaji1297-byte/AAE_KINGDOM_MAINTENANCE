@@ -275,10 +275,135 @@ This reveals upstream → downstream dependencies across the entire automation e
 
 ---
 
+## 7. SYSTEMS OVERVIEW (KINGDOM MAP)
+A high‑level conceptual map of the kingdom’s automation, content, and API infrastructure.  
+Shows how all systems interrelate across inputs, engines, outputs, and maintenance layers.
 
 ---
 
-## 5. CALENDAR AUTOMATION HOOKS
+### 7.1 Core System Pillars
+These are the primary engines that drive the kingdom’s automated output.
+
+| Pillar | Description | Repos | Outputs |
+|--------|-------------|--------|---------|
+| **Text Output Engine** | Generates and posts text content to Threads | FMMedia-TextOutput_Engine | Threads Posts |
+| **Visual Output Engine** | Converts GSheets content into IG/YouTube reels | FMMedia-VisualOutput_Engine | Reels (IG / YouTube) |
+| **Harvest Scanner** | Scans public GitHub repos for data and inspiration | GHHarvestScanner | Harvested Repo Data |
+| **FM Media Vault** | Central content repository for long‑form and short‑form content | FM-MediaEnterprises | Multi‑platform content |
+| **AAE Kingdom Mapping** | The sovereign atlas of all systems, tokens, workflows, and dependencies | AAE_KINGDOM_MAPPING | Documentation & Operational Clarity |
+
+---
+
+### 7.2 Input Layer (Content Sources)
+The raw materials that feed the engines.
+
+- **GitHub Repos**  
+  - Text content  
+  - Reservoir content  
+  - Scripts  
+  - Media assets  
+
+- **Google Sheets**  
+  - Reel content  
+  - Captions  
+  - Structured data  
+
+- **FM Media Enterprises Vault**  
+  - Long‑form content  
+  - Identity frameworks  
+  - IP assets  
+
+- **Public GitHub Repos**  
+  - Harvest targets  
+  - Research material  
+
+---
+
+### 7.3 Processing Layer (Engines & Workflows)
+Where content is transformed into output.
+
+- **Threads Posting Workflows**  
+  - module_001_post.yml  
+  - post_to_threads.yml  
+  - post_to_threads_engine.yml  
+
+- **Reels Rendering Workflow**  
+  - render_video.yml  
+
+- **Harvest Workflow**  
+  - harvest.yml  
+
+Each engine is powered by tokens defined in Section 1.
+
+---
+
+### 7.4 Output Layer (Distribution)
+Where the kingdom broadcasts its signals.
+
+- **Threads**  
+  - Automated text posts  
+  - Reservoir‑based posting  
+
+- **Instagram Reels** *(future full activation)*  
+  - Visual content generated from Sheets  
+
+- **YouTube Shorts** *(future)*  
+  - Same visual pipeline as IG  
+
+- **Harvested Data**  
+  - Repo insights  
+  - Research material  
+  - Inspiration for new engines  
+
+---
+
+### 7.5 Maintenance Layer (Operational Backbone)
+The systems that keep everything alive, refreshed, and functional.
+
+- **Token Directory** (Section 1)  
+- **GitHub Actions Tracker** (Section 2)  
+- **API Platform Hub** (Section 3)  
+- **API Instruction Files** (Section 3.5)  
+- **Refresh Protocols** (Section 4)  
+- **Pipeline Map** (Section 5)  
+- **Workflow Dependency Graph** (Section 6)  
+
+This layer ensures the kingdom is **recoverable**, **repeatable**, and **independent of memory**.
+
+---
+
+### 7.6 Kingdom Philosophy
+The architecture operates on:
+
+- **Cold repeatability**  
+- **Zero cognitive load**  
+- **Single‑source‑of‑truth mapping**  
+- **Separation of deep instructions vs operational procedures**  
+- **Automation as default**  
+- **Sovereign control over all external dependencies**  
+
+This ensures the kingdom scales without friction or ambiguity.
+
+---
+
+### 7.7 Future Expansion Nodes
+Planned or potential systems that will integrate into the map.
+
+- **Widget Ecosystem Map**  
+- **Inter‑Repo Architecture Map**  
+- **Receiver Summon Engine Integration**  
+- **Identity Gradient Engine Mapping**  
+- **FM Media Vault → Multi‑Platform Distributor**  
+- **Property Node Scripting Engine**  
+
+These will be added as new sections when activated.
+
+---
+
+
+---
+
+## ??. CALENDAR AUTOMATION HOOKS
 These are the triggers for future Google Calendar API automation:
 
 - Token expiry < 7 days → auto‑create event  
@@ -288,7 +413,7 @@ These are the triggers for future Google Calendar API automation:
 
 ---
 
-## 6. META‑LEVEL NOTES
+## X. META‑LEVEL NOTES
 - This registry is the *single source of truth* for all life‑admin tasks.  
 - All updates must be reflected here before being considered “complete”.  
 - This file is the cold administrative backbone of your empire’s infrastructure.
