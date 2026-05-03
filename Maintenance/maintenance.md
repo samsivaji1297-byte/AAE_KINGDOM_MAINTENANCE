@@ -27,7 +27,7 @@ Tracks purpose, triggers, dependencies, and current operational status.
 | **Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads.yml` | Schedule | Posts content from GitHub Repo Threads with Threads API | Threads Token | Every 4 Hours | Last Run 03/05/2025 | Passing |
 | **Post to Threads (Reservoir Mode)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads_engine.yml` | Schedule | Posts content from GitHub Repo Threads with Threads API | Threads Token | Every Hour | Last Run 03/05/2025 | Passing |
 | **Render Video** | FMMedia-VisualOutput_Engine | `.github/workflows/render_video.yml` | Schedule with Manual Selection of Time | Content used from GSheets for Reel Output | Google Sheets - Cloud Console PAT | Output determined in Code | Last Run 03/05/2025 | Passing |
-| **GHHarvestScanner** | GHHarvestScanner | `.github/workflows/harvest.yml` | Manual | Scans repos + forks targets | PAT | 13/04/2025 | Passing |
+| **GHHarvestScanner** | GHHarvestScanner | `.github/workflows/harvest.yml` | Manual | Scans repos + forks targets | PAT | Manual | 13/04/2025 | Passing |
 
 ---
 
