@@ -68,7 +68,7 @@ Each platform has its own dedicated `.md` file inside `/api_instructions/`.
 
 | Platform | Instruction File | Contents |
 |----------|------------------|----------|
-| **Meta / Threads API** | `/api_instructions/threads_api.md` | How to generate long‑lived token, refresh steps, scopes |
+| **Meta / Threads API** | `/api_instructions/threads_token_api.md` | How to generate long‑lived token, refresh steps, scopes |
 | **Google Sheets API** | `/api_instructions/google_sheets_api.md` | How to create service account, generate JSON key, assign permissions |
 | **GitHub API (PAT)** | `/api_instructions/github_pat.md` | How to create PAT, scopes needed, where to store it |
 | **Instagram Publishing API** | `/api_instructions/instagram_api.md` | How to re‑establish IG publishing token (future) |
@@ -77,7 +77,17 @@ Each platform has its own dedicated `.md` file inside `/api_instructions/`.
 ---
 
 ### Folder Structure (Recommended)
+AAE_KINGDOM_MAPPING/
+│
+├── maintenance.md
+├── api_instructions/
+│   ├── threads_api.md
+│   ├── google_sheets_api.md
+│   ├── github_pat.md
+│   ├── instagram_api.md
+│   └── youtube_oauth.md
 
+---
 
 
 
