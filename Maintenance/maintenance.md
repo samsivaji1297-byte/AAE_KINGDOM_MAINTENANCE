@@ -143,48 +143,7 @@ Shows inputs, processing engines, outputs, required tokens, and repo locations.
 
 ---
 
-## 5. WORKFLOW DEPENDENCY GRAPH
 
-
-
-                          ┌──────────────────────────┐
-                          │  Google Sheets (Content) │
-                          └──────────────┬───────────┘
-                                         │
-                                         ▼
-                         ┌──────────────────────────────┐
-                         │ FMMedia-VisualOutput_Engine  │
-                         │  (Reels Generator)           │
-                         └──────────────┬───────────────┘
-                                        │
-                                        ▼
-                         ┌──────────────────────────────┐
-                         │  render_video.yml (Action)   │
-                         └──────────────┬───────────────┘
-                                        │
-                                        ▼
-                           IG / YouTube Reels Output
-
-
-GitHub Repo Content ───────────────► FMMedia-TextOutput_Engine
-                                         │
-                                         ▼
-                         ┌──────────────────────────────┐
-                         │ module_001_post.yml          │
-                         │ post_to_threads.yml          │
-                         │ post_to_threads_engine.yml   │
-                         └──────────────┬───────────────┘
-                                        │
-                                        ▼
-                                   Threads API
-
-
-Public GitHub Repos ───────────────► GHHarvestScanner
-                                         │
-                                         ▼
-                         ┌──────────────────────────────┐
-                         │ harvest.yml (Action)         │
-                         └──────────────────────────────┘
 ---
 
 
