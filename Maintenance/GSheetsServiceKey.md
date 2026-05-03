@@ -70,3 +70,83 @@ os.environ["GOOGLE_CREDENTIALS"]
 This is the authentication payload used by the Sheets API client.
 
 ---
+
+
+
+
+
+# GOOGLE SHEETS → GITHUB SECRET REGEN PROTOCOL
+### *Service Account Key Workflow (For Sheets → GitHub Automations)*  
+Cold. Repeatable. Permanent.
+
+---
+
+## 1. Access Google Cloud Project
+- Open **Google Cloud Console**
+- Select the project used for automation  
+  *(Sheets → GitHub pipeline project)*
+
+---
+
+## 2. Enable Sheets API
+- Sidebar → **APIs & Services**
+- **Enable APIs & Services**
+- Search: **Google Sheets API**
+- Enable
+
+---
+
+## 3. Create Service Account
+- APIs & Services → **Credentials**
+- **Create Credentials → Service Account**
+- Name:  
+  `github-automation` *(or equivalent)*
+
+---
+
+## 4. Generate JSON Key
+- Open the service account
+- Go to **Keys**
+- **Add Key → Create new key → JSON**
+- Download the `.json` file  
+  *(This file **is** the credential used by GitHub.)*
+
+---
+
+## 5. Copy Service Account Email
+Format:
+
+<service-account-name>@<project-id>.iam.gserviceaccount.com
+
+
+---
+
+## 6. Grant Sheet Access
+- Open the Google Sheet used by the automation
+- **Share** with the service account email
+- Permission: **Editor**
+
+---
+
+## 7. Add Credential to GitHub Secrets
+- GitHub Repo → **Settings**
+- **Secrets and variables → Actions**
+- **New repository secret**
+- Name:
+
+GOOGLE_CREDENTIALS
+
+
+- Paste the **entire JSON file contents**
+- Save
+
+---
+
+## 8. GitHub Workflow Usage
+The GitHub Action reads the credential via:
+
+os.environ["GOOGLE_CREDENTIALS"]
+
+
+This authenticates the Sheets API client.
+
