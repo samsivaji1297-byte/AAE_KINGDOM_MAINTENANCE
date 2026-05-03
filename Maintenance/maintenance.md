@@ -6,27 +6,26 @@ Cold. Methodical. Repeatable. Permanent.
 
 ## 1. TOKEN DIRECTORY
 | Token Name | Storage Location | Expiry Cycle | Systems Using It | Refresh Protocol | Last Updated | Notes |
-|-----------|------------------|--------------|------------------|------------------|---------------|-------|
-| **Threads Long‑Lived Token** | Google Sheets → `Config!B9` | 30 Days | Google Apps Script Threads Poster | Protocol 1 | 01/05/2026 |
-| **Threads Long‑Lived Token - THREADS_ACCESS_TOKEN** | GitHub Repo → `FMMedia-TextOutput_Engine` | 30 Days | GitHub Actions Threads Poster | Protocol 1 | 01/05/2026 |
-| **Google Service Account Key - GitHub Secret `CONTENT_REPO_PAT** | `GitHub Repo → `FMMedia-VisualOutput_Engine` | Rare | Sheets → GitHub pipelines | Protocol 2 | 12/02/2026 | Used to pull GSheets Content into Video Reel Format (basic design), just to have something go out |
-| **GHHarvestScanner-PAT** | Main GitHub A/C → Repo PAT | ~No Expiry Date | GitHub Public Repo Harvest | Protocol Unknown | 14/04/2026 | This was done to see if I could harvest public GH Repos |
-| **Instagram Publishing Token** | Google Apps Scripts | Not Used | IG Reels pipeline | Protocol Unknown | YYYY‑MM‑DD | Will need to re-establish this when appropriate |
-| **YouTube OAuth Token** | GitHub Secret | Variable | YouTube Shorts pipeline | Protocol Unknown | YYYY‑MM‑DD | Non-existent |
-
+|-----------|------------------|--------------|------------------|------------------|--------------|-------|
+| **Threads Long‑Lived Token** | Google Sheets → `Config!B9` | 30 Days | Google Apps Script Threads Poster | Protocol 1 | 01/05/2026 | — |
+| **Threads Long‑Lived Token — `THREADS_ACCESS_TOKEN`** | GitHub Repo → `FMMedia-TextOutput_Engine` | 30 Days | GitHub Actions Threads Poster | Protocol 1 | 01/05/2026 | Mirrors Sheets token; required for GH Actions |
+| **Google Service Account Key — `CONTENT_REPO_PAT`** | GitHub Repo → `FMMedia-VisualOutput_Engine` | Rare | Sheets → GitHub pipelines | Protocol 2 | 12/02/2026 | Used to pull GSheets content into basic reel format |
+| **GHHarvestScanner-PAT** | Main GitHub Account → PAT | No Expiry | GitHub Public Repo Harvest | Protocol Unknown | 14/04/2026 | Experimental token for harvesting public repos |
+| **Instagram Publishing Token** | Google Apps Script | Not Used | IG Reels pipeline | Protocol Unknown | — | Will need re‑establishing when IG pipeline is revived |
+| **YouTube OAuth Token** | GitHub Secret | Variable | YouTube Shorts pipeline | Protocol Unknown | — | Currently non‑existent |
 
 ---
 
 ## 2. GITHUB ACTIONS TRACKER
 A central log of all automated workflows across the empire.  
-Tracks purpose, triggers, dependencies, and current operational status.
+Tracks purpose, triggers, dependencies, and operational status.
 
 | Workflow Name | Repo | File Path | Trigger | Purpose | Tokens Required | Frequency | Last Run / Setup | Status |
 |---------------|------|-----------|---------|---------|-----------------|-----------|------------------|--------|
-| **Module 001 — Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/module_001_post.yml` | Schedule | Posts content from GitHub Repo Threads with Threads API | Threads Token | Every 4 Hours | Last Run 03/05/2025 | Passing |
-| **Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads.yml` | Schedule | Posts content from GitHub Repo Threads with Threads API | Threads Token | Every 4 Hours | Last Run 03/05/2025 | Passing |
-| **Post to Threads (Reservoir Mode)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads_engine.yml` | Schedule | Posts content from GitHub Repo Threads with Threads API | Threads Token | Every Hour | Last Run 03/05/2025 | Passing |
-| **Render Video** | FMMedia-VisualOutput_Engine | `.github/workflows/render_video.yml` | Schedule with Manual Selection of Time | Content used from GSheets for Reel Output | Google Sheets - Cloud Console PAT | Output determined in Code | Last Run 03/05/2025 | Passing |
+| **Module 001 — Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/module_001_post.yml` | Schedule | Posts content from repo to Threads via API | Threads Token | Every 4 Hours | 03/05/2025 | Passing |
+| **Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads.yml` | Schedule | Posts content from repo to Threads via API | Threads Token | Every 4 Hours | 03/05/2025 | Passing |
+| **Post to Threads (Reservoir Mode)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads_engine.yml` | Schedule | Reservoir‑based posting engine | Threads Token | Every Hour | 03/05/2025 | Passing |
+| **Render Video** | FMMedia-VisualOutput_Engine | `.github/workflows/render_video.yml` | Schedule / Manual | Generates reels using GSheets content | Google Sheets SA Key | Variable | 03/05/2025 | Passing |
 | **GHHarvestScanner** | GHHarvestScanner | `.github/workflows/harvest.yml` | Manual | Scans repos + forks targets | PAT | Manual | 13/04/2025 | Passing |
 
 ---
@@ -45,6 +44,7 @@ Tracks purpose, triggers, dependencies, and current operational status.
 - [ ] All workflows have manual dispatch enabled  
 - [ ] All workflows have a passing dry‑run in the last 30 days  
 - [ ] All workflows are still relevant to current architecture  
+
 
 ---
 
@@ -72,7 +72,7 @@ Tracks purpose, triggers, dependencies, and current operational status.
 ## 3. PIPELINE MAP
 | Pipeline | Inputs | Outputs | Tokens Required | Repo |
 |----------|--------|---------|----------------|------|
-| **Sheets → Apps Script → Threads** | Google Sheets content | Threads posts | Threads Token | `threads-poster` |
+| **Sheets → Apps Script → Threads** | Google Sheets  | Threads posts | Threads Token | `threads-poster` |
 | **Sheets → GitHub → IG/YouTube** | Sheets content | IG Reels + YouTube Shorts | PAT, SA Key | `reels-pipeline` |
 | **Receiver Summon Engine** | Scripts | Manifestation outputs | None | `sovereign-engine` |
 | **FM Media Distribution Engine** | FM Vault content | Multi‑platform distribution | PAT | `fm-media-engine` |
