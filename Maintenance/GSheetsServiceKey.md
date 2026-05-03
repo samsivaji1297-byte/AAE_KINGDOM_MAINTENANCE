@@ -37,6 +37,9 @@ It looks like:
 ```
 github-automation@<project-id>.iam.gserviceaccount.com
 ```
+github-automation@video-reels-pipelinenode.iam.gserviceaccount.com
+```
+
 
 ## **6. Share the Google Sheet With That Email**
 - Open your Google Sheet (e.g., **FM Media Enterprises Vault**)  
