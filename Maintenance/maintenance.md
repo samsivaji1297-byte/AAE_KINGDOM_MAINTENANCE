@@ -11,8 +11,9 @@ Cold. Methodical. Repeatable. Permanent.
 | **Threads Long‑Lived Token - THREADS_ACCESS_TOKEN** | GitHub Repo → `FMMedia-TextOutput_Engine` | 30 Days | GitHub Actions Threads Poster | Protocol 1 | 01/05/2026 |
 | **Google Service Account Key - GitHub Secret `CONTENT_REPO_PAT** | `GitHub Repo → `FMMedia-VisualOutput_Engine` | Rare | Sheets → GitHub pipelines | Protocol 2 | 12/02/2026 | Used to pull GSheets Content into Video Reel Format (basic design), just to have something go out |
 | **GHHarvestScanner-PAT** | Main GitHub A/C → Repo PAT | ~No Expiry Date | GitHub Public Repo Harvest | Protocol Unknown | 14/04/2026 | This was done to see if I could harvest public GH Repos |
+| **Instagram Publishing Token** | Google Apps Scripts | Not Used | IG Reels pipeline | Protocol Unknown | YYYY‑MM‑DD | Will need to re-establish this when appropriate |
 | **YouTube OAuth Token** | GitHub Secret | Variable | YouTube Shorts pipeline | Protocol Unknown | YYYY‑MM‑DD | Non-existent |
-| **Instagram Publishing Token** (if used) | GitHub Secret | 60 days | IG Reels pipeline | Protocol Unknown | YYYY‑MM‑DD | Non-existent |
+
 
 ---
 
@@ -20,14 +21,13 @@ Cold. Methodical. Repeatable. Permanent.
 A central log of all automated workflows across the empire.  
 Tracks purpose, triggers, dependencies, and current operational status.
 
-| Workflow Name | Repo | File Path | Trigger | Purpose | Tokens Required | Last Run | Status |
-|---------------|------|-----------|---------|---------|----------------|----------|--------|
-| **Threads Poster** | threads-poster | `.github/workflows/post.yml` | Schedule / Manual | Posts content from Sheets to Threads | Threads Token | YYYY‑MM‑DD | Passing / Failing |
-| **Reels Engine** | reels-pipeline | `.github/workflows/reels.yml` | Manual | Generates IG/YouTube reels | PAT, SA Key | YYYY‑MM‑DD | Passing / Failing |
-| **Sheets Sync** | reels-pipeline | `.github/workflows/sync.yml` | Schedule | Pulls content from Sheets | SA Key | YYYY‑MM‑DD | Passing / Failing |
-| **FM Media Distributor** | fm-media-engine | `.github/workflows/distribute.yml` | Manual | Multi‑platform distribution | PAT | YYYY‑MM‑DD | Passing / Failing |
-| **Identity Gradient Generator** | identity-engine | `.github/workflows/gradient.yml` | Manual | Generates identity gradients | None | YYYY‑MM‑DD | Passing / Failing |
-| **Harvest Scanner** | aei_empire_backend | `.github/workflows/harvest.yml` | Manual | Scans repos + forks targets | PAT | YYYY‑MM‑DD | Passing / Failing |
+| Workflow Name | Repo | File Path | Trigger | Purpose | Tokens Required | Frequency | Last Run / Setup | Status |
+|---------------|------|-----------|---------|---------|-----------------|-----------|------------------|--------|
+| **Module 001 — Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/module_001_post.yml` | Schedule | Posts content from GitHub Repo Threads with Threads API | Threads Token | Every 4 Hours | Last Run 03/05/2025 | Passing |
+| **Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads.yml` | Schedule | Posts content from GitHub Repo Threads with Threads API | Threads Token | Every 4 Hours | Last Run 03/05/2025 | Passing |
+| **Post to Threads (Reservoir Mode)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads_engine.yml` | Schedule | Posts content from GitHub Repo Threads with Threads API | Threads Token | Every Hour | Last Run 03/05/2025 | Passing |
+| **Render Video** | FMMedia-VisualOutput_Engine | `.github/workflows/render_video.yml` | Schedule with Manual Selection of Time | Content used from GSheets for Reel Output | Google Sheets - Cloud Console PAT | Output determined in Code | Last Run 03/05/2025 | Passing |
+| **GHHarvestScanner** | GHHarvestScanner | `.github/workflows/harvest.yml` | Manual | Scans repos + forks targets | PAT | 13/04/2025 | Passing |
 
 ---
 
@@ -48,6 +48,14 @@ Tracks purpose, triggers, dependencies, and current operational status.
 
 ---
 
+## 3. API Platforms
+| Token Name | Platform | Use |
+|------------|----------|-----|
+
+
+
+
+---
 
 ## 2. MONTHLY MAINTENANCE CHECKLIST
 | Task | Description | Location | Frequency | Status |
