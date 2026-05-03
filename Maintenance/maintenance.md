@@ -129,6 +129,120 @@ These are short, repeatable, and designed for quick execution.
 
 ---
 
+## 5. PIPELINE MAP
+A high‑level map of all automated pipelines across the kingdom.  
+Shows inputs, processing engines, outputs, required tokens, and repo locations.
+
+| Pipeline | Inputs | Processing Engine | Outputs | Tokens Required | Repo |
+|----------|--------|-------------------|---------|-----------------|------|
+| **Threads Text Engine** | GitHub Repo Content | Threads Posting Workflows | Threads Posts | Threads Token | FMMedia-TextOutput_Engine |
+| **Threads Reservoir Engine** | Reservoir Folder (TextOutput Engine) | Reservoir Posting Workflow | Threads Posts | Threads Token | FMMedia-TextOutput_Engine |
+| **Reels Visual Engine** | Google Sheets Content | Render Video Workflow | IG / YouTube Reels | Google Sheets SA Key | FMMedia-VisualOutput_Engine |
+| **GH Harvest Scanner** | Public GitHub Repos | Harvest Workflow | Harvested Repo Data | PAT | GHHarvestScanner |
+| **FM Media Vault (Manual)** | FM Media Enterprises Content | Manual Curation | Multi‑platform Content | None | FM-MediaEnterprises |
+
+---
+
+## 5. WORKFLOW DEPENDENCY GRAPH
+
+
+
+                          ┌──────────────────────────┐
+                          │  Google Sheets (Content) │
+                          └──────────────┬───────────┘
+                                         │
+                                         ▼
+                         ┌──────────────────────────────┐
+                         │ FMMedia-VisualOutput_Engine  │
+                         │  (Reels Generator)           │
+                         └──────────────┬───────────────┘
+                                        │
+                                        ▼
+                         ┌──────────────────────────────┐
+                         │  render_video.yml (Action)   │
+                         └──────────────┬───────────────┘
+                                        │
+                                        ▼
+                           IG / YouTube Reels Output
+
+
+GitHub Repo Content ───────────────► FMMedia-TextOutput_Engine
+                                         │
+                                         ▼
+                         ┌──────────────────────────────┐
+                         │ module_001_post.yml          │
+                         │ post_to_threads.yml          │
+                         │ post_to_threads_engine.yml   │
+                         └──────────────┬───────────────┘
+                                        │
+                                        ▼
+                                   Threads API
+
+
+Public GitHub Repos ───────────────► GHHarvestScanner
+                                         │
+                                         ▼
+                         ┌──────────────────────────────┐
+                         │ harvest.yml (Action)         │
+                         └──────────────────────────────┘
+---
+
+
+## 6. SYSTEMS OVERVIEW (KINGDOM MAP)
+
+### Core Pillars
+- **Text Output Engine**  
+  - Generates and posts Threads content  
+  - Powered by GitHub Actions + Threads API  
+
+- **Visual Output Engine**  
+  - Converts GSheets content into reels  
+  - Outputs IG/YouTube content  
+
+- **Harvest Scanner**  
+  - Scans public GitHub repos  
+  - Used for research, inspiration, and data gathering  
+
+- **FM Media Vault**  
+  - Central content repository  
+  - Source of truth for long‑form and short‑form content  
+
+---
+
+### Token Dependencies
+- Threads Token → TextOutput Engine  
+- Google SA Key → VisualOutput Engine  
+- PAT → Harvest Scanner  
+- IG Token (future) → IG Reels  
+- YouTube OAuth (future) → Shorts Engine  
+
+---
+
+### Automation Flow Summary
+1. **Content Source Layer**  
+   - GitHub repos  
+   - Google Sheets  
+   - FM Media Vault  
+
+2. **Processing Layer**  
+   - TextOutput Engine  
+   - VisualOutput Engine  
+   - Harvest Scanner  
+
+3. **Distribution Layer**  
+   - Threads  
+   - IG Reels  
+   - YouTube Shorts  
+
+4. **Mapping Layer (This Repo)**  
+   - Tokens  
+   - Workflows  
+   - Pipelines  
+   - Dependencies  
+   - Architecture  
+
+---
+
 
 ---
 
