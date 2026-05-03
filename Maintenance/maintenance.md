@@ -142,6 +142,79 @@ Shows inputs, processing engines, outputs, required tokens, and repo locations.
 | **FM Media Vault (Manual)** | FM Media Enterprises Content | Manual Curation | Multi‑platform Content | None | FM-MediaEnterprises |
 
 ---
+## 6. WORKFLOW DEPENDENCY GRAPH
+A vertical lineage map showing how tokens, secrets, workflows, and outputs interconnect.  
+This reveals upstream → downstream dependencies across the entire automation ecosystem.
+
+──────────────────────────────────────────────────────────────────────────────
+                           THREADS POSTING SYSTEM
+──────────────────────────────────────────────────────────────────────────────
+
+                 ┌────────────────────────────────────────┐
+                 │      Threads Long‑Lived Token          │
+                 │  (Google Sheets → Config!B9)           │
+                 └───────────────────────┬────────────────┘
+                                         │
+                                         ▼
+                 ┌────────────────────────────────────────┐
+                 │ GitHub Secret: THREADS_ACCESS_TOKEN    │
+                 │ (Mirrors Sheets token)                 │
+                 └───────────────────────┬────────────────┘
+                                         │
+                                         ▼
+        ┌──────────────────────────────────────────────────────────────────┐
+        │ FMMedia-TextOutput_Engine Workflows                              │
+        │  • module_001_post.yml                                           │
+        │  • post_to_threads.yml                                           │
+        │  • post_to_threads_engine.yml (Reservoir Mode)                   │
+        └───────────────────────┬──────────────────────────────────────────┘
+                                │
+                                ▼
+                       Threads API (Publishing)
+                                │
+                                ▼
+                         Threads Posts (Output)
+
+
+──────────────────────────────────────────────────────────────────────────────
+                           VISUAL REELS SYSTEM
+──────────────────────────────────────────────────────────────────────────────
+
+                 ┌────────────────────────────────────────┐
+                 │ Google Service Account Key             │
+                 │ (GitHub Secret: CONTENT_REPO_PAT)      │
+                 └───────────────────────┬────────────────┘
+                                         │
+                                         ▼
+                 ┌────────────────────────────────────────┐
+                 │ FMMedia-VisualOutput_Engine            │
+                 │  render_video.yml Workflow             │
+                 └───────────────────────┬────────────────┘
+                                         │
+                                         ▼
+                         IG / YouTube Reels (Output)
+
+
+──────────────────────────────────────────────────────────────────────────────
+                           HARVEST SCANNER SYSTEM
+──────────────────────────────────────────────────────────────────────────────
+
+                 ┌────────────────────────────────────────┐
+                 │ GHHarvestScanner-PAT                   │
+                 │ (GitHub PAT)                           │
+                 └───────────────────────┬────────────────┘
+                                         │
+                                         ▼
+                 ┌────────────────────────────────────────┐
+                 │ GHHarvestScanner Repo                  │
+                 │  harvest.yml Workflow                  │
+                 └───────────────────────┬────────────────┘
+                                         │
+                                         ▼
+                         Harvested Repo Data (Output)
+
+──────────────────────────────────────────────────────────────────────────────
+
 
 
 ---
