@@ -76,18 +76,6 @@ Each platform has its own dedicated `.md` file inside `/api_instructions/`.
 
 ---
 
-### Folder Structure (Recommended)
-AAE_KINGDOM_MAPPING/
-│
-├── maintenance.md
-├── api_instructions/
-│   ├── threads_api.md
-│   ├── google_sheets_api.md
-│   ├── github_pat.md
-│   ├── instagram_api.md
-│   └── youtube_oauth.md
-
----
 
 
 
