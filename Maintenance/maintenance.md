@@ -21,7 +21,7 @@ A central log of all automated workflows across the empire.
 Tracks purpose, triggers, dependencies, and operational status.
 
 | Workflow Name | Repo | File Path | Trigger | Purpose | Tokens Required | Frequency | Last Run / Setup | Status |
-|---------------|------|-----------|---------|---------|-----------------|-----------|------------------|--------|
+|--------------|------|-----------|---------|---------|-----------------|-----------|------------------|--------|
 | **Module 001 — Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/module_001_post.yml` | Schedule | Posts content from repo to Threads via API | Threads Token | Every 4 Hours | 03/05/2025 | Passing |
 | **Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads.yml` | Schedule | Posts content from repo to Threads via API | Threads Token | Every 4 Hours | 03/05/2025 | Passing |
 | **Post to Threads (Reservoir Mode)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads_engine.yml` | Schedule | Reservoir‑based posting engine | Threads Token | Every Hour | 03/05/2025 | Passing |
