@@ -10,7 +10,7 @@ Cold. Methodical. Repeatable. Permanent.
 | **Threads Long‑Lived Token** | Google Sheets → `Config!B9` | 30 Days | Google Apps Script Threads Poster | Protocol 1 | 01/05/2026 | — |
 | **Threads Long‑Lived Token — `THREADS_ACCESS_TOKEN`** | GitHub Repo → `FMMedia-TextOutput_Engine` | 30 Days | GitHub Actions Threads Poster | Protocol 1 | 01/05/2026 | Mirrors Sheets token; required for GH Actions |
 | **Google Service Account Key — `CONTENT_REPO_PAT`** | GitHub Repo → `FMMedia-VisualOutput_Engine` | Rare | Sheets → GitHub pipelines | Protocol 2 | 12/02/2026 | Used to pull GSheets content into basic reel format |
-| **GHHarvestScanner-PAT** | Main GitHub Account → PAT | No Expiry | GitHub Public Repo Harvest | Protocol Unknown | 14/04/2026 | Experimental token for harvesting public repos |
+| **GHHarvestScanner-PAT** | Main GitHub Account → PAT | No Expiry | GitHub Public Repo Harvest | Protocol 3 | 14/04/2026 | Experimental token for harvesting public repos |
 | **Instagram Publishing Token** | Google Apps Script | Not Used | IG Reels pipeline | Protocol Unknown | — | Will need re‑establishing when IG pipeline is revived |
 | **YouTube OAuth Token** | GitHub Secret | Variable | YouTube Shorts pipeline | Protocol Unknown | — | Currently non‑existent |
 
@@ -76,19 +76,58 @@ Each platform has its own dedicated `.md` file inside `/api_instructions/`.
 
 ---
 
-
-
+## 4. REFRESH PROTOCOLS
+Step‑by‑step operational procedures for refreshing each token.  
+These are short, repeatable, and designed for quick execution.
 
 ---
 
-## 2. MONTHLY MAINTENANCE CHECKLIST
-| Task | Description | Location | Frequency | Status |
-|------|-------------|----------|-----------|--------|
-| Threads Token Refresh | Replace token in Sheets + GitHub | Meta Graph Dev Tools | Monthly | Pending + Done |
-| Sheets Integrity Check | Confirm config values + ranges | Google Sheets | Monthly | Pending / Done |
-| GHHarvestScanner-PAT Audit | No Expiry window | Main GitHub A/C → Repo PAT | Quarterly-Bi-Annually | Done |
-| Pipeline Dry‑Run | Trigger test run of all automations | GitHub Actions | Monthly | Pending / Done |
-| Calendar Reminder Audit | Ensure all reminders exist | Google Calendar | Monthly | Pending / Done |
+### Protocol 1 — Threads Long‑Lived Token
+1. Open Meta Developer Tools  
+2. Generate a new long‑lived user token  
+3. Replace token in Google Sheets → `Config!B9`  
+4. Replace GitHub Secret → `THREADS_ACCESS_TOKEN`  
+5. Trigger manual dry‑run of all Threads workflows  
+6. Update “Last Updated” in Token Directory  
+
+---
+
+### Protocol 2 — Google Service Account Key (Google Sheets API)
+1. Open Google Cloud Console  
+2. Navigate to IAM → Service Accounts  
+3. Select the service account used for Sheets access  
+4. Create a new JSON key  
+5. Replace GitHub Secret → `CONTENT_REPO_PAT`  
+6. Trigger manual dry‑run of the VisualOutput Engine  
+7. Update “Last Updated” in Token Directory  
+
+---
+
+### Protocol 3 — GHHarvestScanner PAT
+1. Go to GitHub → Settings → Developer Settings → PATs  
+2. Generate a new PAT with `public_repo` read permissions  
+3. Replace PAT in GHHarvestScanner repo secrets  
+4. Run manual harvest scan to confirm validity  
+5. Update “Last Updated” in Token Directory  
+
+---
+
+### Protocol Unknown — Instagram Publishing Token (Future)
+1. Re‑establish IG Publishing App  
+2. Generate new IG Publishing Token  
+3. Store token in Apps Script or GitHub Secret  
+4. Trigger IG pipeline dry‑run  
+5. Update “Last Updated” in Token Directory  
+
+---
+
+### Protocol Unknown — YouTube OAuth Token (Future)
+1. Run OAuth flow to generate new token  
+2. Replace GitHub Secret  
+3. Trigger YouTube Shorts pipeline dry‑run  
+4. Update “Last Updated” in Token Directory  
+
+---
 
 
 ---
