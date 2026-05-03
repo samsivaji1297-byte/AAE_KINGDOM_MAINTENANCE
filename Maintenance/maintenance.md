@@ -6,7 +6,7 @@ Cold. Methodical. Repeatable. Permanent.
 
 ## 1. TOKEN DIRECTORY
 | Token Name | Storage Location | Expiry Cycle | Systems Using It | Refresh Protocol | Last Updated | Notes |
-|-----------|------------------|--------------|------------------|------------------|--------------|-------|
+|------------|------------------|--------------|------------------|------------------|--------------|-------|
 | **Threads Long‑Lived Token** | Google Sheets → `Config!B9` | 30 Days | Google Apps Script Threads Poster | Protocol 1 | 01/05/2026 | — |
 | **Threads Long‑Lived Token — `THREADS_ACCESS_TOKEN`** | GitHub Repo → `FMMedia-TextOutput_Engine` | 30 Days | GitHub Actions Threads Poster | Protocol 1 | 01/05/2026 | Mirrors Sheets token; required for GH Actions |
 | **Google Service Account Key — `CONTENT_REPO_PAT`** | GitHub Repo → `FMMedia-VisualOutput_Engine` | Rare | Sheets → GitHub pipelines | Protocol 2 | 12/02/2026 | Used to pull GSheets content into basic reel format |
@@ -21,7 +21,7 @@ A central log of all automated workflows across the empire.
 Tracks purpose, triggers, dependencies, and operational status.
 
 | Workflow Name | Repo | File Path | Trigger | Purpose | Tokens Required | Frequency | Last Run / Setup | Status |
-|--------------|------|-----------|---------|---------|-----------------|-----------|------------------|--------|
+|---------------|------|-----------|---------|---------|-----------------|-----------|------------------|--------|
 | **Module 001 — Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/module_001_post.yml` | Schedule | Posts content from repo to Threads via API | Threads Token | Every 4 Hours | 03/05/2025 | Passing |
 | **Post to Threads (Every 4 Hours)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads.yml` | Schedule | Posts content from repo to Threads via API | Threads Token | Every 4 Hours | 03/05/2025 | Passing |
 | **Post to Threads (Reservoir Mode)** | FMMedia-TextOutput_Engine | `.github/workflows/post_to_threads_engine.yml` | Schedule | Reservoir‑based posting engine | Threads Token | Every Hour | 03/05/2025 | Passing |
