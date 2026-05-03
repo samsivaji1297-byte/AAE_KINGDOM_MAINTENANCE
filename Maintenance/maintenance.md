@@ -54,7 +54,7 @@ Tracks API sources, purpose, and where credentials are stored.
 
 | Platform | Purpose | API Type | Where Used | Credential Location | Notes |
 |----------|---------|----------|------------|---------------------|-------|
-| **Meta / Threads API** | Posting text content to Threads | Long‑Lived User Token | TextOutput Engine | Google Sheets (`Config!B9`), GitHub Secret (`THREADS_ACCESS_TOKEN`) | Requires monthly refresh |
+| **Meta / Threads API** | Posting text content to Threads | Long‑Lived User Token | GSheets: FM Media Enterprises Vault, GH: FMMedia-TextOutput_Engine | Google Sheets (`Config!B9`), GitHub Secret (`THREADS_ACCESS_TOKEN`) | Requires monthly refresh |
 | **Google Sheets API** | Pulling content for reels | Service Account Key | VisualOutput Engine | GitHub Secret (`CONTENT_REPO_PAT`) | Rare refresh |
 | **GitHub API** | Repo harvesting, automation | PAT | GHHarvestScanner | GitHub PAT | Used for public repo scanning |
 | **Instagram Publishing API** | IG Reels publishing (future) | IG Publishing Token | VisualOutput Engine (future) | Apps Script / GitHub Secret | Currently inactive |
